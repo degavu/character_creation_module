@@ -13,6 +13,7 @@ def attack(char_name: str, char_class: str) -> str:
                 f'{5 + randint(-3, -1)}')
     return (f'{char_name} не нанес урон')
 
+
 def defence(char_name: str, char_class: str) -> str:
     if char_class == 'warrior':
         return (f'{char_name} блокировал {10 + randint(5, 10)} ед. урона')
@@ -21,6 +22,7 @@ def defence(char_name: str, char_class: str) -> str:
     if char_class == 'healer':
         return (f'{char_name} блокировал {10 + randint(2, 5)} ед. урона')
     return (f'{char_name} не блокировал')
+
 
 def special(char_name: str, char_class: str) -> str:
     if char_class == 'warrior':
@@ -31,6 +33,7 @@ def special(char_name: str, char_class: str) -> str:
     if char_class == 'healer':
         return (f'{char_name} применил специальное умение «Защита {10 + 30}»')
     return (f'{char_name} не применял специальное умение')
+
 
 def start_training(char_name: str, char_class: str) -> str:
     if char_class == 'warrior':
