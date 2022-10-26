@@ -88,19 +88,28 @@ def start_training(character: Character):
     Возвращает сообщения о результатах цикла тренировки персонажа.
     """
     # Замените конструкцию условных операторов на словарь.
-    char_class = {'Warrior': ' ты Воитель — великий мастер ближнего боя.',
-                  'Mage': ' ты Маг — превосходный укротитель стихий.',
-                  'Healer': ' ты Лекарь — чародей, способный исцелять раны.'
-                  }
+    #char_class = {'Warrior': ' ты Воитель — великий мастер ближнего боя.',
+    #              'Mage': ' ты Маг — превосходный укротитель стихий.',
+    #              'Healer': ' ты Лекарь — чародей, способный исцелять раны.'
+    #              }
     
-    print(f'{character.name}, {str(char_class[character.__class__.__name__])}')
+    #print(f'{character.name}, {str(char_class[character.__class__.__name__])}')
+    #Вместо if-в работает верхний код
+
+    if character.__class__.__name__ == 'Warrior':
+        print(f'{char_name}, ты Воитель — великий мастер ближнего боя.')
+    if character.__class__.__name__ == 'Mage':
+        print(f'{char_name}, ты Маг — превосходный укротитель стихий.')
+    if character.__class__.__name__ == 'Healer':
+        print(f'{char_name}, ты Лекарь — чародей, способный исцелять раны.')
+
     print('Потренируйся управлять своими навыками.')
     print('Введи одну из команд: attack — чтобы атаковать противника, '
           'defence — чтобы блокировать атаку противника или '
           'special — чтобы использовать свою суперсилу.')
     print('Если не хочешь тренироваться, введи команду skip.')
     cmd = None
-    
+
     while cmd != 'skip':
         commands = {'attack': character.attack, 'defence': character.defence, 'special': character.special}
         cmd = input('Введи команду: ')
